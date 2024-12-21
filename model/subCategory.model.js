@@ -1,10 +1,12 @@
 import mongoose, { Schema, model } from "mongoose";
 
 const schema = new Schema({
+  SCId: { type: Number },
   CId: { type: Number },
-  Category: {
+  SubCategory: {
     type: String,
   },
+  Category: { type: String },
   DisplayOrder: { type: Number },
   Status: {
     type: Boolean,
@@ -12,6 +14,6 @@ const schema = new Schema({
 });
 
 //Create Your Model
-const ParentCategory = model("parentCategory", schema);
+const SubCategory = model("subCategory", schema);
 
-export default ParentCategory;
+export default SubCategory;

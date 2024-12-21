@@ -6,6 +6,10 @@ import dotenv from "dotenv";
 import cors from "cors";
 import bodyParser from "body-parser";
 import AWSCognitoAuthRouters from "./router/AWSCognitoAuth.routers.js";
+import SubCategoryRouter from "./router/SubCategory.routers.js";
+import UserRolesRouter from "./router/UserRole.routers.js";
+import UrlMasterRouter from "./router/UrlMaster.routers.js";
+import RolePermissionRouter from "./router/rolePermission.router.js";
 
 dotenv.config();
 
@@ -42,6 +46,18 @@ app.use("/api", UserRouter);
 
 // Parent Category API routes
 app.use("/api", ParentCategoryRouter);
+
+// Sub Category API routes
+app.use("/api", SubCategoryRouter);
+
+//User Roles API route
+app.use("/api", UserRolesRouter);
+
+//Url Master API route
+app.use("/api", UrlMasterRouter);
+
+//Role Permission
+app.use("/api", RolePermissionRouter);
 
 app.listen(PORT, () => {
   console.log(`The server running at http://localhost:${PORT}`);
